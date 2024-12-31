@@ -1667,7 +1667,7 @@ select {
   
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 500px) {
   .container1{
     display: flex;
     height: 52%;
@@ -1859,11 +1859,13 @@ select {
     font-size: 80%;
     margin-left: 5%;
     margin-top: 110%;
+    z-index: 9;
   }
   .next-button1{
     font-size: 80%;
     margin-left: 55%;
     margin-top: 110%;
+    z-index: 9;
   }
   .reserva-calendar-container{
     margin-left: 5%;
@@ -2010,6 +2012,7 @@ select {
   #myapp-random-container .myapp-random-reservation-container{
     display: none;
   }
+  
   .formcontacto{
     margin-left: -6%;
   }
@@ -2168,6 +2171,7 @@ select {
     width: 135%;
   }
   .header-with-line span{
+    font-size: 110%;
     width: 120%;
   }
   .payment-method .metod_pago{
@@ -2183,58 +2187,61 @@ select {
     margin-left: 0%;
   }
   .date-selector {
-    width: 300px;
-    text-align: center;
+    width: 200px; /* Reducido de 300px */
     border: 1px solid #dee2e6;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 2px 4px #0000000d;
+    border-radius: 6px; /* Reducido de 8px */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background-color: white;
+    text-align: center;
   }
   
   .date-selector-header {
-    padding: 15px;
-    font-size: 16px;
+    background-color: #c19a6b;
+    color: white;
+    padding: 8px; /* Reducido de 15px */
     font-weight: bold;
-    color: #fff;
-    background: #c19a6b;
-    border-radius: 8px 8px 0 0;
+    font-size: 14px; /* Reducido de 16px */
+    border-radius: 6px 6px 0 0;
   }
   
   .date-selector-content {
     display: flex;
-    padding: 20px 15px;
+    justify-content: space-between;
+    padding: 10px; /* Reducido de 20px 15px */
   }
   
   .date-box {
     width: 50%;
-    padding: 10px;
     border-right: 1px solid #dee2e6;
+    padding: 5px; /* Reducido de 10px */
   }
   
-  .date-box:last-child {border:0}
+  .date-box:last-child {
+    border-right: none;
+  }
   
   .date-box .day {
-    margin: 10px 0;
-    font-size: 38px;
+    font-size: 28px; /* Reducido de 38px */
     font-weight: bold;
+    margin: 5px 0; /* Reducido de 10px */
     color: #495057;
   }
   
   .date-box .month-year {
-    margin: 5px 0;
-    font-size: 14px;
+    font-size: 12px; /* Reducido de 14px */
+    margin: 3px 0; /* Reducido de 5px */
     color: #6c757d;
   }
   
   .nights {
-    padding: 15px;
-    font-size: 16px;
-    color: #495057;
-    background: #f8f9fa;
-    border-top: 1px solid #dee2e6;
-    border-radius: 0 0 8px 8px;
     display: flex;
     justify-content: space-between;
+    padding: 8px; /* Reducido de 15px */
+    background-color: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+    font-size: 14px; /* Reducido de 16px */
+    border-radius: 0 0 6px 6px;
+    color: #495057;
   }
   footer{
     padding: 90px 50px;
@@ -2242,12 +2249,34 @@ select {
   body{
     min-height: 1vh;
   }
+  #next-step3{
+    margin-top: -135%;
+  }
   
 }
 
 @media screen and (min-width: 375px){
   footer{
     padding: 90px 50px;
+  }
+}
+@media screen and (max-width: 360px){
+  .form-fields{
+    margin-left: 185%;
+  }
+}
+@media screen and (max-width: 428px){
+  .header-with-line::before {
+    width: 110%;
+  }
+  .form-fields{
+    margin-left: 110%;
+  }
+  .payment-method .metod_pago{
+    margin-left: 0%;
+  }
+  .total-button button{
+    margin-left: 9%;
   }
 }
 
