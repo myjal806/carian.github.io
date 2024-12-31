@@ -1,0 +1,127 @@
+/* General styling */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+} */
+
+
+.reserva-calendar-container {
+    width: 90%;
+    max-width: 600px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-left: 25%;
+    margin-top: 2.5%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Calendar header */
+.reserva-calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.reserva-nav-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #7D6B54;
+}
+
+#monthYear {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #7D6B54;
+}
+
+/* Calendar grid */
+.reserva-calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.reserva-day-name {
+    text-align: center;
+    font-weight: bold;
+    color: #9B8B73;
+}
+
+.reserva-days {
+    display: contents;
+}
+
+.reserva-day {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #fff;
+    color: #7D6B54;
+}
+
+.reserva-day.unavailable {
+    background: #30281d;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.reserva-day.selected {
+    background: #836947;
+    color: #fff;
+}
+
+.reserva-day:hover:not(.unavailable):not(.selected) {
+    background: #9B8B73;
+    color: #fff;
+}
+
+/* Selected dates */
+.reserva-selected-dates {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #7D6B54;
+}
+
+button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    border: none;
+    background: #7D6B54;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #9B8B73;
+    cursor: not-allowed;
+}
+
+@media screen and (max-width: 1280px){
+    .reserva-calendar-container{
+        margin-left: 28%;
+        margin-top: 4%;
+    }
+}

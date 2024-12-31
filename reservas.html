@@ -1,0 +1,3990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teachers:ital,wght@0,400..800;1,400..800&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="imagenes/logo_miradorrar.jpg">
+    <link rel="stylesheet" href="Css/style10.css" />
+    <title> HOSTAL MIRADOR PISCO </title>
+    <link rel="icon" type="image/x-icon" href="icono.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Teachers', sans-serif;
+            background-color: white;
+
+        }
+
+        img {
+            width: 100vw;
+            height: 86vh;
+            object-fit: cover;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: transparent;
+            transition: background-color 0.3s ease;
+            padding: 20px 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .navbar.scrolled {
+            background-color: #a08869;
+        }
+
+        .navbar .menu-container {
+            display: flex;
+            align-items: center;
+            transform: translateX(400px);
+        }
+
+        .navbar .menu-button {
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .navbar .location {
+            font-size: 16px;
+            color: #fff;
+            transform: translateX(400px);
+        }
+
+        .navbar .location i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        .navbar .reserve-button a {
+            background-color: #fff;
+            color: #a08869;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0px;
+            text-decoration: none;
+            transform: translateX(-100px);
+        }
+
+        .navbar .language-selector select {
+            background: transparent;
+            color: white;
+            border: none;
+            font-size: 16px;
+            transform: translateX(-400px);
+        }
+
+        .navbar .menu-container span {
+            font-size: 16px;
+            color: white;
+            margin-right: 20px;
+        }
+
+        #btn-menu {
+            display: none;
+        }
+
+        .container-menu {
+            position: fixed;
+            background: white;
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+
+        #btn-menu:checked~.container-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cont-menu {
+            width: 100%;
+            background: white;
+            height: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding-top: 50px;
+        }
+
+        nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .nav-row {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .nav-row a {
+            display: block;
+            text-decoration: none;
+            padding: 20px 30px;
+            color: #c7c7c7;
+            border: 2px solid trasparent;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            width: 250px;
+            text-align: center;
+            position: relative;
+            margin: 10px 0;
+        }
+
+        .nav-row a:hover {
+            border: 2px solid #c7c7c7;
+            background: #1f1f1f;
+            color: #fff;
+        }
+
+
+        .nav-row a.habitacionesh {
+            display: block;
+            text-decoration: none;
+            padding: 120px 120px;
+            color: black;
+            border: 2px solid #0000000d;
+            border-radius: 0px;
+            transition: all 0.7s ease;
+            width: 24%;
+            max-width: 300px;
+            position: relative;
+            margin: 10px 0;
+            background: #a0886914;
+            font-size: 18px;
+            font-weight: normal;
+            text-shadow: none;
+
+        }
+
+        .nav-row a.habitacionesh:hover {
+            background: url('imagenes/imagen1.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #a08869, -1px -1px 0 #a08869, 1px -1px 0 #a08869, -1px 1px 0 #a08869;
+
+        }
+
+        .nav-row a.habitacionesh::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('imagenes/imagen1.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(0px);
+            transition: filter 0.5s ease;
+            z-index: -1;
+        }
+
+        .nav-row a.habitacionesh:hover::before {
+            filter: blur(5px);
+        }
+
+        .nav-row a.galeriah {
+            display: block;
+            text-decoration: none;
+            padding: 120px 120px;
+            color: black;
+            border: 2px solid #0000000d;
+            border-radius: 0px;
+            transition: all 0.7s ease;
+            width: 24%;
+            max-width: 300px;
+            text-align: center;
+            position: relative;
+            margin: 10px 0;
+            background: #a0886914;
+            font-size: 18px;
+            font-weight: normal;
+            text-shadow: none;
+        }
+
+        .nav-row a.galeriah:hover {
+            background: url('imagenes/imagen2.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #a08869, -1px -1px 0 #a08869, 1px -1px 0 #a08869, -1px 1px 0 #a08869;
+        }
+
+        .nav-row a.galeriah::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('imagenes/imagen2.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(0px);
+            transition: filter 0.5s ease;
+            z-index: -1;
+        }
+
+        .nav-row a.galeriah:hover::before {
+            filter: blur(5px);
+        }
+
+
+
+        .nav-row a.restauranteh {
+            display: block;
+            text-decoration: none;
+            padding: 120px 120px;
+            color: black;
+            border: 2px solid #0000000d;
+            border-radius: 0px;
+            transition: all 0.7s ease;
+            width: 24%;
+            max-width: 300px;
+            text-align: center;
+            position: relative;
+            margin: 10px 0;
+            background: #a0886914;
+            font-size: 18px;
+            font-weight: normal;
+            text-shadow: none;
+        }
+
+        .nav-row a.restauranteh:hover {
+            background: url('imagenes/imagen3.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #a08869, -1px -1px 0 #a08869, 1px -1px 0 #a08869, -1px 1px 0 #a08869;
+        }
+
+        .nav-row a.restauranteh::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('imagenes/imagen3.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(0px);
+            transition: filter 0.5s ease;
+            z-index: -1;
+        }
+
+        .nav-row a.restauranteh:hover::before {
+            filter: blur(5px);
+        }
+
+        .nav-row a.reservash {
+            display: block;
+            text-decoration: none;
+            padding: 120px 120px;
+            color: black;
+            border: 2px solid #0000000d;
+            border-radius: 0px;
+            transition: all 0.7s ease;
+            width: 24%;
+            max-width: 300px;
+            text-align: center;
+            position: relative;
+            margin: 10px 0;
+            background: #a0886914;
+            font-size: 18px;
+            font-weight: normal;
+            text-shadow: none;
+        }
+
+        .nav-row a.reservash:hover {
+            background: url('imagenes/imagen4.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #a08869, -1px -1px 0 #a08869, 1px -1px 0 #a08869, -1px 1px 0 #a08869;
+        }
+
+        .nav-row a.reservash::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('imagenes/imagen4.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(0px);
+            transition: filter 0.5s ease;
+            z-index: -1;
+        }
+
+        .nav-row a.reservash:hover::before {
+            filter: blur(5px);
+        }
+
+
+        .nav-row a.contactoh {
+            display: block;
+            text-decoration: none;
+            padding: 120px 120px;
+            color: black;
+            border: 2px solid #0000000d;
+            border-radius: 0px;
+            transition: all 0.7s ease;
+            width: 24%;
+            max-width: 300px;
+            position: relative;
+            margin: 10px 0;
+            background: #a0886914;
+            font-size: 18px;
+            font-weight: normal;
+            text-shadow: none;
+        }
+
+        .nav-row a.contactoh:hover {
+            background: url('imagenes/imagen5.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #a08869, -1px -1px 0 #a08869, 1px -1px 0 #a08869, -1px 1px 0 #a08869;
+        }
+
+        .nav-row a.contactoh::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('imagenes/imagen5.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(0px);
+            transition: filter 0.5s ease;
+            z-index: -1;
+        }
+
+        .nav-row a.contactoh:hover::before {
+            filter: blur(5px);
+        }
+
+
+
+        .nav-row a.eventosh {
+            display: block;
+            text-decoration: none;
+            padding: 120px 120px;
+            color: black;
+            border: 2px solid #0000000d;
+            border-radius: 0px;
+            transition: all 0.7s ease;
+            width: 24%;
+            max-width: 300px;
+            position: relative;
+            margin: 10px 0;
+            background: #a0886914;
+            font-size: 18px;
+            font-weight: normal;
+            text-shadow: none;
+        }
+
+        .nav-row a.eventosh:hover {
+            background: url('imagenes/imagen6.jpg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 1px 1px 0 #a08869, -1px -1px 0 #a08869, 1px -1px 0 #a08869, -1px 1px 0 #a08869;
+        }
+
+        .nav-row a.eventosh::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('imagenes/imagen6.jpg') no-repeat center center;
+            background-size: cover;
+            filter: blur(0px);
+            transition: filter 0.5s ease;
+            z-index: -1;
+        }
+
+        .nav-row a.eventosh:hover::before {
+            filter: blur(5px);
+        }
+
+        .cont-menu label {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 24px;
+            z-index: 1001;
+        }
+
+        .navbar .menu-button {
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+            margin-right: 10px;
+        }
+
+        .icon-equis i {
+            color: black;
+        }
+
+
+
+        /*responsive :C*/
+
+        @media screen and (max-width: 1366px) {
+
+            .nav-row a.habitacionesh,
+            .nav-row a.galeriah,
+            .nav-row a.restauranteh,
+            .nav-row a.reservash,
+            .nav-row a.contactoh,
+            .nav-row a.eventosh {
+                width: 15%;
+                height: 150px;
+                padding: 30px 40px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-row a {
+                font-size: 14px;
+
+            }
+
+            .navbar .location {
+                transform: translateX(200px);
+            }
+        }
+
+        @media screen and (max-width: 850px) {
+
+            .nav-row a.habitacionesh,
+            .nav-row a.galeriah,
+            .nav-row a.restauranteh,
+            .nav-row a.reservash,
+            .nav-row a.contactoh,
+            .nav-row a.eventosh {
+                width: 20%;/ height: 90px;
+                padding: 20px 10px;
+            }
+
+            .nav-row a {
+                font-size: 13px;
+            }
+        }
+
+
+        @media screen and (max-width: 430px) {
+            .nav-row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-row a.habitacionesh,
+            .nav-row a.galeriah,
+            .nav-row a.restauranteh,
+            .nav-row a.reservash,
+            .nav-row a.contactoh,
+            .nav-row a.eventosh {
+                width: 48%;
+                margin-bottom: 2%;
+                height: 80px;
+                padding: 15px 10px;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-row a {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width: 390px) {
+
+            .nav-row a.habitacionesh,
+            .nav-row a.galeriah,
+            .nav-row a.restauranteh,
+            .nav-row a.reservash,
+            .nav-row a.contactoh,
+            .nav-row a.eventosh {
+                width: 90%;
+                margin-bottom: 4%;
+                height: 60px;
+                padding: 8px;
+                font-size: 10px;
+            }
+        }
+
+        /*la cosa esa del menu*/
+        @media screen and (max-width: 1366px) {
+            .navbar .menu-container {
+                transform: translateX(300px);
+            }
+        }
+
+        /* Ajustes para pantallas hasta 850px */
+        @media screen and (max-width: 850px) {
+            .menu-container {
+                transform: translateX(-100px);
+            }
+        }
+
+        @media screen and (max-width: 1300px) {
+            .navbar .menu-container {
+                transform: translateX(200px);
+            }
+        }
+
+        @media screen and (max-width: 920px) {
+            .navbar .menu-container {
+                transform: translateX(100px);
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar .menu-container {
+                transform: translateX(60px);
+            }
+        }
+
+        /* Ajustes para pantallas hasta 430px */
+        @media screen and (max-width: 430px) {
+            .navbar .menu-container {
+                transform: translateX(40px);
+            }
+
+            .navbar .menu-container button {
+                font-size: 20px;
+            }
+
+            .navbar .menu-container span {
+                font-size: 12px;
+            }
+        }
+
+        /* Ajustes para pantallas hasta 390px */
+        @media screen and (max-width: 390px) {
+            .navbar .menu-container {
+                transform: translateX(20px);
+            }
+
+            .navbar .menu-container button {
+                font-size: 18px;
+            }
+
+            .navbar .menu-container span {
+                font-size: 10px;
+            }
+        }
+
+        /*LOCACIOOOONNNN*/
+        @media screen and (max-width: 1680px) {
+            .navbar .location {
+                transform: translateX(380px);
+            }
+        }
+
+        @media screen and (max-width: 1600px) {
+            .navbar .location {
+                transform: translateX(360px);
+            }
+        }
+
+        @media screen and (max-width: 1440px) {
+            .navbar .location {
+                transform: translateX(300px);
+            }
+        }
+
+        @media screen and (max-width: 1300px) {
+            @media screen and (max-width: 1300px) {
+                .navbar .location {
+                    transform: translateX(200px);
+                    font-size: 14px;
+                }
+            }
+        }
+
+        @media screen and (max-width: 1366px) {
+            .navbar .location {
+                transform: translateX(280px);
+            }
+        }
+
+        @media screen and (max-width: 912px) {
+            .navbar .location {
+                font-size: 14px;
+                transform: translateX(250px);
+            }
+        }
+
+
+        @media screen and (max-width: 853px) {
+            .navbar .location {
+                font-size: 14px;
+                transform: translateX(230px);
+            }
+
+            .navbar .location i {
+                font-size: 18px;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .navbar .location {
+                display: none;
+            }
+        }
+
+
+
+        /*BOTON DE RESERVAAAARRR*/
+        @media screen and (max-width: 1366px) {
+            .navbar .reserve-button {
+                padding: 8px 16px;
+                font-size: 15px;
+                transform: translateX(20px);
+            }
+        }
+
+        @media screen and (max-width: 1280px) {
+            .navbar .reserve-button {
+                padding: 6px 12px;
+                font-size: 14px;
+                transform: translateX(40px);
+            }
+        }
+
+        @media screen and (max-width: 1230px) {
+            .navbar .reserve-button {
+                padding: 6px 12px;
+                font-size: 14px;
+                transform: translateX(50px);
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .navbar .reserve-button {
+                padding: 6px 12px;
+                font-size: 14px;
+                transform: translateX(60px);
+            }
+        }
+
+        @media screen and (max-width: 1180px) {
+            .navbar .reserve-button {
+                padding: 6px 12px;
+                font-size: 14px;
+                transform: translateX(70px);
+            }
+        }
+
+        @media screen and (max-width: 1150px) {
+            .navbar .reserve-button {
+                padding: 6px 12px;
+                font-size: 14px;
+                transform: translateX(80px);
+            }
+
+        }
+
+        @media screen and (max-width: 1105px) {
+            .navbar .reserve-button {
+                padding: 6px 12px;
+                font-size: 14px;
+                transform: translateX(90px);
+            }
+        }
+
+        @media screen and (max-width: 1125px) {
+            .navbar .reserve-button {
+                padding: 6px 12px;
+                font-size: 14px;
+                transform: translateX(120px);
+            }
+        }
+
+        @media screen and (max-width: 853px) {
+            .navbar .reserve-button a {
+                padding: 6px 12px;
+                font-size: 14px;
+                transform: translateX(-20px);
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .navbar .reserve-button {
+                padding: 4px 10px;
+                font-size: 11px;
+                transform: translateX(-40px);
+            }
+        }
+
+        @media screen and (max-width: 430px) {
+            .navbar .reserve-button {
+                padding: 4px 10px;
+                font-size: 11px;
+                transform: translateX(-80px);
+            }
+        }
+
+        @media screen and (max-width: 390px) {
+            .navbar .reserve-button a {
+                padding: 3px 8px;
+                font-size: 10px;
+                transform: translateX(-20px);
+            }
+        }
+
+        /*lo de lenguajeeee*/
+        @media screen and (max-width: 1600px) {
+            .navbar .language-selector {
+                transform: translateX(60px);
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 1440px) {
+            .navbar .language-selector {
+                transform: translateX(94px);
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 1366px) {
+            .navbar .language-selector {
+                transform: translateX(150px);
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .navbar .language-selector {
+                transform: translateX(230px);
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 1280px) {
+            .navbar .language-selector {
+                transform: translateX(220px);
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 1152px) {
+            .navbar .language-selector {
+                transform: translateX(250px);
+                font-size: 15px;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .navbar .language-selector {
+                transform: translateX(350px);
+                font-size: 15px;
+            }
+        }
+
+        /* Ajustes para pantallas hasta 850px */
+        @media screen and (max-width: 850px) {
+            .navbar .language-selector {
+                transform: translateX(-200px);
+                font-size: 13px;
+            }
+        }
+
+        /* Ajustes para pantallas hasta 500px */
+        @media screen and (max-width: 500px) {
+            .navbar .language-selector {
+                display: none;
+            }
+        }
+
+        /* Ajustes para pantallas hasta 430px */
+        @media screen and (max-width: 430px) {
+            .language-selector select {
+                transform: translateX(0px);
+                font-size: 12px;
+            }
+        }
+
+        /* Ajustes para pantallas hasta 390px */
+        @media screen and (max-width: 390px) {
+            .language-selector select {
+                transform: translateX(-100px);
+                font-size: 11px;
+            }
+        }
+
+        .info-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            color: #777;
+            margin: 0 20px;
+        }
+
+        .info-item a {
+            text-decoration: none;
+            color: #777;
+        }
+
+        .info-item a:hover {
+            color: #000;
+        }
+
+        .info-divider {
+            width: 1px;
+            height: 20px;
+            background-color: #777;
+            margin: 0 20px;
+        }
+
+        .info-item img {
+            margin-left: 10px;
+            width: 30px;
+            height: auto;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Lato, sans-serif;
+        }
+
+        body {
+
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 200vh;
+            background-color: white;
+        }
+
+        .slider-frame {
+            width: 100%;
+            height: 115vh;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slider-frame ul {
+            display: flex;
+            padding: 0;
+            width: 400%;
+            height: 100%;
+            animation: margin-left 28s infinite alternate ease-in-out;
+        }
+
+        .slider-frame li {
+            width: 100%;
+            list-style: none;
+            position: relative;
+        }
+
+        .slider-text {
+            position: absolute;
+            text-align: center;
+            padding: 0 18.5vw;
+            top: 10vh;
+            color: aliceblue;
+            font-size: 2.5vw;
+        }
+
+        .texto1 {
+            position: absolute;
+            text-align: center;
+            padding: 0 18.5vw;
+            top: 10vh;
+            color: aliceblue;
+            font-size: 2.5vw;
+        }
+
+        .texto1 p {
+            font-family: 'monserrat';
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin: 280px 0 0;
+            text-align: justify;
+            top: 55px;
+        }
+
+        .slider-text h2 {
+            font-family: 'roboto';
+            font-size: 2rem;
+            margin-bottom: 0;
+            margin-top: 200px;
+            position: absolute;
+            left: 18.5%;
+        }
+
+        .texto1 h2 {
+            font-family: 'roboto';
+            font-size: 2rem;
+            margin-bottom: 0;
+            margin-top: 200px;
+            position: absolute;
+            left: 18.5%;
+        }
+
+        .slider-text p {
+            font-family: 'monserrat';
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin: 280px 0 0 0;
+            text-align: justify;
+        }
+
+
+        .slider-frame img {
+            width: 100%;
+            height: 80%;
+            object-fit: cover;
+            display: block;
+            filter: brightness(60%);
+            transition: filter 0.5s ease-in-out;
+        }
+
+        .slider-frame li:hover img {
+            filter: brightness(95%);
+        }
+
+        .slider-text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            padding: 20px 40px;
+            border-radius: 10px;
+            z-index: 2;
+            text-align: justify;
+            max-width: 80%;
+            line-height: 1.4;
+            background: none;
+        }
+
+        .slider-frame li.active .slider-text-overlay {
+            opacity: 1;
+        }
+
+        .slider-frame button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0);
+            border: none;
+            color: white;
+            font-size: 30px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 1000;
+            transition: background-color 0.3s, border-radius 0.3s;
+        }
+
+        .slider-frame button:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 100%;
+            color: black;
+        }
+
+        .slider-frame .prev0 {
+            left: 10px;
+            color: white;
+        }
+
+        .slider-frame .next0 {
+            right: 10px;
+        }
+
+
+        @keyframes slide {
+            0% {
+                margin-left: 0;
+            }
+
+            20% {
+                margin-left: 0;
+            }
+
+            25% {
+                margin-left: -100%;
+            }
+
+            45% {
+                margin-left: -100%;
+            }
+
+            50% {
+                margin-left: -200%;
+            }
+
+            70% {
+                margin-left: -200%;
+            }
+
+            75% {
+                margin-left: -300%;
+            }
+
+            100% {
+                margin-left: -300%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .slider-frame {
+                width: 100%;
+                height: auto;
+                position: static;
+                transform: none;
+            }
+
+            .slider-frame img {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+            }
+
+            .slider-frame button {
+                font-size: 20px;
+            }
+
+            @media (max-width: 768px) {
+
+                .texto1 h2,
+                .slider-text h2 {
+                    font-size: 2vw;
+                    margin-top: 10vh;
+                    padding: 0 5vw;
+                }
+
+                .texto1 p,
+                .slider-text p {
+                    font-size: 2vw;
+                    margin-top: 17vh;
+                    padding: 0 5vw;
+                }
+            }
+
+            @media (max-width: 690px) {
+
+                .texto1 h2,
+                .slider-text h2 {
+                    font-size: 2vw;
+                    margin-top: 10vh;
+                    padding: 0 5vw;
+                }
+
+                .texto1 p,
+                .slider-text p {
+                    font-size: 2vw;
+                    margin-top: 16vh;
+                    padding: 0 5vw;
+                }
+            }
+
+            @media (max-width: 590px) {
+
+                .texto1 h2,
+                .slider-text h2 {
+                    font-size: 2vw;
+                    margin-top: 10vh;
+                    padding: 0 5vw;
+                }
+
+                .texto1 p,
+                .slider-text p {
+                    font-size: 2vw;
+                    margin-top: 15vh;
+                    padding: 0 5vw;
+                }
+            }
+
+            @media (max-width: 511px) {
+
+                .texto1 h2,
+                .slider-text h2 {
+                    font-size: 2vw;
+                    margin-top: 6vh;
+                    padding: 0 5vw;
+                }
+
+                .texto1 p,
+                .slider-text p {
+                    font-size: 2vw;
+                    margin-top: 11vh;
+                    padding: 0 5vw;
+                }
+            }
+
+            @media (max-width: 480px) {
+
+                .texto1 h2,
+                .slider-text h2 {
+                    font-size: 2.5vw;
+                    margin-top: 5vh;
+                    padding: 0 2vw;
+                }
+
+                .texto1 p,
+                .slider-text p {
+                    font-size: 2.5vw;
+                    margin-top: 11vh;
+                    padding: 0 2vw;
+                }
+            }
+
+            @media (max-width: 436px) {
+
+                .texto1 h2,
+                .slider-text h2 {
+                    font-size: 2.5vw;
+                    margin-top: 5vh;
+                    padding: 0 2vw;
+                }
+
+                .texto1 p,
+                .slider-text p {
+                    font-size: 2.5vw;
+                    margin-top: 10vh;
+                    padding: 0 2vw;
+                }
+            }
+
+            @media (max-width: 430px) {
+
+                .texto1 h2,
+                .slider-text h2 {
+                    font-size: 2.5vw;
+                    margin-top: 0.5vh;
+                    padding: 0 2vw;
+                }
+
+                .texto1 p,
+                .slider-text p {
+                    font-size: 2.5vw;
+                    margin-top: 5vh;
+                    padding: 0 2vw;
+                }
+
+            }
+
+            /* BOTONES CARRUSEL*/
+            @media (max-width: 430px) {
+                .slider-frame .prev0 {
+                    left: 10px;
+                    color: white;
+                    margin-top: -80%;
+                }
+            }
+
+            @media (max-width: 430px) {
+                .slider-frame .next0 {
+                    right: 10px;
+                    color: white;
+                    margin-top: -80%;
+                }
+
+            }
+
+            @media (max-width: 375px) {
+                .slider-frame .prev0 {
+                    left: 10px;
+                    color: white;
+                    margin-top: -60%;
+                }
+
+                .slider-frame .next0 {
+                    right: 10px;
+                    color: white;
+                    margin-top: -60%;
+                }
+
+            }
+
+            @media (max-width: 768px) {
+                .slider-frame .prev0 {
+                    left: 10px;
+                    color: white;
+                    margin-top: -40%;
+                }
+
+                .slider-frame .next0 {
+                    right: 10px;
+                    color: white;
+                    margin-top: -40%;
+                }
+
+            }
+
+            @media (max-width: 344px) {
+                .slider-frame .prev0 {
+                    left: 10px;
+                    color: white;
+                    margin-top: -100%;
+                }
+
+                .slider-frame .next0 {
+                    right: 10px;
+                    color: white;
+                    margin-top: -100%;
+                }
+
+            }
+
+            @media (max-width: 412px) {
+                .slider-frame .prev0 {
+                    left: 10px;
+                    color: white;
+                    margin-top: -80%;
+                }
+
+                .slider-frame .next0 {
+                    right: 10px;
+                    color: white;
+                    margin-top: -80%;
+                }
+
+            }
+
+            /*responsive de los platos*/
+
+
+
+            /* Ajustes para pantallas más pequeñas */
+            @media (max-width: 1024px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 250px;
+                    height: 250px;
+                }
+            }
+
+            @media (max-width: 821px) {
+                /* Ajusta el valor según necesites */
+
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 500px;
+                    height: 500px;
+                }
+            }
+
+            /* Ajustes para pantallas medianas */
+            @media (max-width: 768px) {
+                /* Ajusta el valor según necesites */
+
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 250px;
+                    height: 250px;
+                }
+            }
+
+            @media (max-width: 738px) {
+                /* Ajusta el valor según necesites */
+
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 240px;
+                    height: 240px;
+                }
+            }
+
+            @media (max-width: 730px) {
+                /* Ajusta el valor según necesites */
+
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 240px;
+                    height: 240px;
+                }
+            }
+
+
+            @media (max-width: 721px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 225px;
+                    height: 225px;
+                }
+            }
+
+            @media (max-width: 686px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 220px;
+                    height: 220px;
+                }
+            }
+
+            @media (max-width: 677px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 210px;
+                    height: 210px;
+                }
+            }
+
+            @media (max-width: 673px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 210px;
+                    height: 210px;
+                }
+            }
+
+            @media (max-width: 658px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 210px;
+                    height: 210px;
+                }
+            }
+
+            @media (max-width: 657px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 205px;
+                    height: 205px;
+                }
+            }
+
+            @media (max-width: 650px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 205px;
+                    height: 205px;
+                }
+            }
+
+            @media (max-width: 646px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 200px;
+                    height: 200px;
+                }
+            }
+
+            @media (max-width: 636px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 199px;
+                    height: 199px;
+                }
+            }
+
+            @media (max-width: 635px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 199px;
+                    height: 199px;
+                }
+            }
+
+            @media (max-width: 634px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 196px;
+                    height: 196px;
+                }
+            }
+
+            @media (max-width: 630px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 195px;
+                    height: 195px;
+                }
+            }
+
+            @media (max-width: 626px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 192px;
+                    height: 192px;
+                }
+            }
+
+            @media (max-width: 625px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 190px;
+                    height: 190px;
+                }
+            }
+
+            @media (max-width: 621px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 190px;
+                    height: 190px;
+                }
+
+            }
+
+            @media (max-width: 618px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 180px;
+                    height: 180px;
+                }
+
+            }
+
+            @media (max-width: 597px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 170px;
+                    height: 170px;
+                }
+
+            }
+
+            @media (max-width: 574px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 158px;
+                    height: 158px;
+                }
+
+            }
+
+            @media (max-width: 553px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 147px;
+                    height: 147px;
+                }
+
+            }
+
+            @media (max-width: 531px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 137px;
+                    height: 137px;
+                }
+
+            }
+
+
+            @media (max-width: 521px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 130px;
+                    height: 130px;
+                }
+            }
+
+
+            /* Ajustes para pantallas pequeñas */
+            @media (max-width: 498px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 115px;
+                    height: 115px;
+                }
+            }
+
+            /* Ajustes para pantallas pequeñas */
+            @media (max-width: 480px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 105px;
+                    height: 105px;
+                }
+            }
+
+            @media (max-width: 448px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+
+            @media (max-width: 437px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 96px;
+                    height: 96px;
+                }
+            }
+
+            @media (max-width: 429px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 85px;
+                    height: 85px;
+                }
+            }
+
+            @media (max-width: 412px) {
+
+                /* Ajusta el valor según necesites */
+                .container1,
+                .container2,
+                .container3,
+                .container4,
+                .container5,
+                .container6,
+                .container7,
+                .container8,
+                .container9,
+                .container10 {
+                    width: 96px;
+                    height: 96px;
+                }
+            }
+
+            @media (max-width: 680px) {
+                .contenedores {
+                    margin-top: -25%;
+
+                }
+            }
+
+            /*RESPONSIVE TEXTO DE PLATOS*/
+
+            @media (max-width: 680px) {
+                h2 {
+                    font-size: 15px;
+                    margin: 10px 0;
+                }
+            }
+
+            @media (max-width: 555px) {
+                h2 {
+                    font-size: 12px;
+                    margin: 10px 0;
+                }
+            }
+
+            @media (max-width: 500px) {
+                h2 {
+                    font-size: 11px;
+                    margin: 10px 0;
+                }
+            }
+
+            @media (max-width: 477px) {
+                h2 {
+                    font-size: 10px;
+                    margin: 10px 0;
+                }
+            }
+
+            @media (max-width: 412px) {
+                h2 {
+                    font-size: 10px;
+                    margin: 10px 0;
+                }
+            }
+
+            @media (max-width: 430px) {
+                h2 {
+                    font-size: 10px;
+                    margin: 9px 0;
+                }
+            }
+
+                {
+                    {
+                        {}
+                }
+            }
+    </style>
+</head>
+
+<body>
+    <div class="navbar" id="navbar">
+        <div class="menu-container">
+            <label for="btn-menu" class="menu-button">
+                <i class="fas fa-bars"></i>
+            </label>
+            <span>MENÚ</span>
+        </div>
+        <div class="location">
+            <i class="fas fa-map-marker-alt"></i> Av. San Martín 267 - Pisco
+        </div>
+        <div class="reserve-button"><a href="#">Reservar Aquí</a></div>
+
+        <div class="language-selector">
+            <select>
+                <option value="es">Es</option>
+                <option value="en">En</option>
+            </select>
+        </div>
+    </div>
+
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+        <div class="cont-menu">
+            <nav>
+                <div class="nav-row">
+                    <a href="cc.php" class="menu-item habitacionesh">HABITACIONES</a>
+                    <a href="galeria.php" class="menu-item galeriah">GALERÍA</a>
+                    <a href="restaurante.php" class="menu-item restauranteh">RESTAURANTE</a>
+                </div>
+
+                <div class="nav-row">
+                    <a href="#" class="menu-item reservash">RESERVAS</a>
+                    <a href="contactos.php" class="menu-item contactoh">CONTACTO</a>
+                    <a href="index.php" class="menu-item eventosh">INICIO</a>
+                </div>
+                <div class="info-section">
+                    <div class="info-item">
+                        <a href="nosotros.php">Sobre Nosotros</a>
+                    </div>
+                    <div class="info-divider"></div>
+                    <div class="info-item">
+                        <a href="librodereclamaciones.php">Libro de Reclamaciones</a>
+                        <img src="imagenes/libro.png" alt="Libro de Reclamaciones">
+                    </div>
+                </div>
+            </nav>
+            <label for="btn-menu" class="icon-equis">
+                <i class="fas fa-times"></i>
+            </label>
+        </div>
+    </div>
+
+    <script>
+        window.onscroll = function () {
+            var navbar = document.getElementById("navbar");
+            if (window.pageYOffset > 0) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        };
+
+        document.getElementById("menuButton").onclick = function () {
+            var menuContent = document.getElementById("menuContent");
+            menuContent.style.display = menuContent.style.display === "block" ? "none" : "block";
+        };
+    </script>
+    <!-- FIN BARRA DE NAVEGACIÓN -->
+
+</html>
+<!DOCTYPE html>
+<html lang="es">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- INICIO CODIGO carrusel -->
+    <div class="slider-frame">
+        <ul>
+            <li>
+                <img src="imagenes/portada_galeria.png" alt="">
+            </li>
+            <li><img src="imagenes/portada_galeria2.png" alt=""></li>
+            <li><img src="imagenes/portada_galeria3.png" alt=""></li>
+            <li><img src="imagenes/portada_galeria4.png" alt=""></li>
+            <li><img src="imagenes/portada_galeria5.png" alt=""></li>
+        </ul>
+        <button class="prev0" aria-label="Previous Slide">&#10094;</button>
+        <button class="next0" aria-label="Next Slide">&#10095;</button>
+    </div>
+
+    <script>
+        const sliderBox = document.querySelector('.slider-frame ul');
+        const slides = document.querySelectorAll('.slider-frame li');
+        const prevButton = document.querySelector('.prev0');
+        const nextButton = document.querySelector('.next0');
+        const textOverlays = document.querySelectorAll('.slider-text-overlay');
+
+        let slideIndex = 1;
+        const totalSlides = slides.length;
+
+        const firstSlide = slides[0].cloneNode(true);
+        const lastSlide = slides[slides.length - 1].cloneNode(true);
+
+        sliderBox.appendChild(firstSlide);
+        sliderBox.insertBefore(lastSlide, slides[0]);
+
+        sliderBox.style.width = `${(totalSlides + 2) * 100}%`;
+
+        sliderBox.style.marginLeft = `-${slideIndex * 100}%`;
+
+        function showSlide(index) {
+            sliderBox.style.transition = 'margin-left 0.5s ease-in-out';
+            sliderBox.style.marginLeft = `-${index * 100}%`;
+
+            textOverlays.forEach((text, i) => {
+                text.style.opacity = i === index - 1 ? '1' : '0';
+            });
+        }
+
+        nextButton.addEventListener('click', () => {
+            slideIndex++;
+            showSlide(slideIndex);
+            if (slideIndex === totalSlides + 1) {
+                setTimeout(() => {
+                    sliderBox.style.transition = 'none';
+                    slideIndex = 1;
+                    sliderBox.style.marginLeft = `-${slideIndex * 100}%`;
+                }, 500);
+            }
+        });
+
+        prevButton.addEventListener('click', () => {
+            slideIndex--;
+            showSlide(slideIndex);
+            if (slideIndex === 0) {
+                setTimeout(() => {
+                    sliderBox.style.transition = 'margin-left 1.5s ease-in-out';
+                    slideIndex = totalSlides;
+                    sliderBox.style.marginLeft = `-${slideIndex * 100}%`;
+                }, 500);
+            }
+        });
+
+        setInterval(() => {
+            nextButton.click();
+        }, 7000);
+    </script>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>Reservas</title>
+    </head>
+
+    <body>
+        <img id="btn-top" src="imagenes/arriba2.png" alt="Ir arriba">
+        <h1><span>RESERVACIÓN DE CUARTOS</span> - HOSTAL MIRADOR PISCO</h1>
+
+        <div class="container1">
+            <div class="rectangulo">
+                <div class="circulo">1</div>
+                <div class="title">SOLICITAR HABITACIÓN</div>
+                <div class="circulo">2</div>
+                <div class="title">HABITACIONES Y PRECIOS</div>
+                <div class="circulo">3</div>
+                <div class="title">CONTACTO</div>
+                <div class="circulo">4</div>
+                <div class="title">CONFIRMACIÓN</div>
+            </div>
+            <button class="next-button" id="next-button">Siguiente</button>
+            <button class="next-button1" id="next-button1">Regresar</button>
+
+
+
+            <img src="gif/calendario.png" alt="Calendario" class="calendario" onclick="mostrarContenido()">
+            <p class="calendarioo" onclick="mostrarContenido()">Calendario<br> de disponibilidad</p>
+
+            <div class="cuadrado">
+                <div class="textoone">
+                    <div>
+                        <div class="select-habitacion-label">Número de habitaciones:</div>
+                        <select id="num-habitaciones" required>
+                            <option disabled selected># de Habitaciones</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+
+                    <div class="select-habitacion-texto">Adultos y Niños</div>
+
+                    <button class="select-habitacion-boton" onclick="openModal()">Desglose por habitación</button>
+                </div>
+            </div>
+
+            <!-- El modal -->
+            <div id="habitacionesModal" class="select-habitacion-modal">
+                <div class="select-habitacion-modal-contenido">
+                    <span class="select-habitacion-cerrar" onclick="closeModal()">&times;</span>
+                    <div class="select-habitacion-modal-titulo">Desglose por Habitación</div>
+                    <div id="habitaciones-container"></div>
+                    <button onclick="validateAndClose()" class="select-habitacion1-boton">Aceptar</button>
+                </div>
+            </div>
+
+
+
+
+            <div class="calendar-container">
+                <div class="calendar-header">Seleccionar fechas</div>
+                <div class="dates">
+                    <div class="date" id="fecha-llegada">
+                        <div class="date-header">Llegada</div>
+                        <div class="date-day" id="llegada-day"></div>
+                        <div class="date-number" id="llegada-number"></div>
+                        <div class="date-month-year" id="llegada-month-year"></div>
+                    </div>
+                    <div class="date" id="fecha-salida">
+                        <div class="date-header">Salida</div>
+                        <div class="date-day" id="salida-day"></div>
+                        <div class="date-number" id="salida-number"></div>
+                        <div class="date-month-year" id="salida-month-year"></div>
+                    </div>
+                </div>
+                <div class="nights-selector">
+                    <span class="nights-text">Noches</span>
+                    <span class="nights-count" id="nights-count"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenido que aparecerá al hacer clic -->
+        <div id="contenido" class="padre">
+            <div class="reserva-calendar-container">
+                <h2>Seleccione sus fechas</h2>
+                <div class="reserva-calendar">
+                    <div class="reserva-calendar-header">
+                        <button id="prevMonth" class="reserva-nav-button">←</button>
+                        <span id="monthYear"></span>
+                        <button id="nextMonth" class="reserva-nav-button">→</button>
+                    </div>
+                    <div class="reserva-calendar-grid">
+                        <div class="reserva-day-name">Dom</div>
+                        <div class="reserva-day-name">Lun</div>
+                        <div class="reserva-day-name">Mar</div>
+                        <div class="reserva-day-name">Mié</div>
+                        <div class="reserva-day-name">Jue</div>
+                        <div class="reserva-day-name">Vie</div>
+                        <div class="reserva-day-name">Sáb</div>
+                        <div id="days" class="reserva-days"></div>
+                    </div>
+                </div>
+                <div class="reserva-selected-dates">
+                    <p>Fecha de llegada: <span id="startDate">--</span></p>
+                    <p>Fecha de salida: <span id="endDate">--</span></p>
+                </div>
+            </div>
+
+            <script src="script.js"></script>
+        </div>
+        <!-- Agrega aquí lo que se mostrará en el siguiente paso -->
+        <div id="next-step" style="display: none;">
+            <div class="containercard" id="habitaciones-container">
+                <div class="card">
+                    <img src="imagenes/habisimple1.jpg"
+                        alt="Habitación simple con cama de dos plazas, baño privado y TV Smart">
+                    <div class="card-content">
+                        <h2>HABITACIÓN SIMPLE</h2>
+                        <hr>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-user-friends"></i>
+                                1-2 Personas
+                            </div>
+                            <div>
+                                <i class="fas fa-wifi"></i>
+                                WiFi
+                            </div>
+                        </div>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-bed"></i>
+                                Cama 2 plazas
+                            </div>
+                            <div>
+                                <i class="fas fa-tv"></i>
+                                TV Smart
+                            </div>
+                        </div>
+                    </div>
+                    <button class="reserve-button" data-room-type="HABITACIÓN SIMPLE"
+                        data-room-image="imagenes/habisimple1.jpg">
+                        RESERVAR - S/.5.00
+                    </button>
+                </div>
+                <div class="card">
+                    <img src="imagenes/habidoble1.jpg"
+                        alt="Habitación simple con cama de dos plazas, baño privado y TV Smart">
+                    <div class="card-content">
+                        <h2>HABITACIÓN DOBLE 1</h2>
+                        <hr>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-user-friends"></i>
+                                2 Personas
+                            </div>
+                            <div>
+                                <i class="fas fa-wifi"></i>
+                                WiFi
+                            </div>
+                        </div>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-bed"></i>
+                                Cama Queen y cama 1.5 plaza
+                            </div>
+                            <div>
+                                <i class="fas fa-tv"></i>
+                                TV Smart
+                            </div>
+                        </div>
+                    </div>
+                    <button class="reserve-button" data-room-type="HABITACIÓN DOBLE 1"
+                        data-room-image="imagenes/habidoble1.jpg">
+                        RESERVAR - S/.5.00
+                    </button>
+                </div>
+                <div class="card">
+                    <img src="imagenes/habidoble1.jpg"
+                        alt="Habitación simple con cama de dos plazas, baño privado y TV Smart">
+                    <div class="card-content">
+                        <h2>HABITACIÓN DOBLE 2</h2>
+                        <hr>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-user-friends"></i>
+                                2 Personas
+                            </div>
+                            <div>
+                                <i class="fas fa-wifi"></i>
+                                WiFi
+                            </div>
+                        </div>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-bed"></i>
+                                Cama Queen
+                            </div>
+                            <div>
+                                <i class="fas fa-tv"></i>
+                                TV Smart
+                            </div>
+                        </div>
+                    </div>
+                    <button class="reserve-button" data-room-type="HABITACIÓN DOBLE 2"
+                        data-room-image="imagenes/habidoble1.jpg">
+                        RESERVAR - S/.5.00
+                    </button>
+                </div>
+                <div class="card">
+                    <img src="imagenes/habitriple1.jpg"
+                        alt="Habitación simple con cama de dos plazas, baño privado y TV Smart">
+                    <div class="card-content">
+                        <h2>HABITACIÓN TRIPLE</h2>
+                        <hr>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-user-friends"></i>
+                                3 Personas
+                            </div>
+                            <div>
+                                <i class="fas fa-wifi"></i>
+                                WiFi
+                            </div>
+                        </div>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-bed"></i>
+                                Cama Queen e Individual
+                            </div>
+                            <div>
+                                <i class="fas fa-tv"></i>
+                                TV Smart
+                            </div>
+                        </div>
+                    </div>
+                    <button class="reserve-button" data-room-type="HABITACIÓN TRIPLE"
+                        data-room-image="imagenes/habitriple1.jpg">
+                        RESERVAR - S/.5.00
+                    </button>
+                </div>
+                <div class="card">
+                    <img src="imagenes/habicuadru1.jpg"
+                        alt="Habitación simple con cama de dos plazas, baño privado y TV Smart">
+                    <div class="card-content">
+                        <h2>HABITACIÓN CUADRUPLE</h2>
+                        <hr>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-user-friends"></i>
+                                1 Persona
+                            </div>
+                            <div>
+                                <i class="fas fa-wifi"></i>
+                                WiFi
+                            </div>
+                        </div>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-bed"></i>
+                                Camarote, 2 Camas Queen
+                            </div>
+                            <div>
+                                <i class="fas fa-tv"></i>
+                                TV Smart
+                            </div>
+                        </div>
+                    </div>
+                    <button class="reserve-button" data-room-type="HABITACIÓN CUADRUPLE"
+                        data-room-image="imagenes/habicuadru1.jpg">
+                        RESERVAR - S/.5.00
+                    </button>
+                </div>
+                <div class="card">
+                    <img src="imagenes/habimatri1.jpg"
+                        alt="Habitación simple con cama de dos plazas, baño privado y TV Smart">
+                    <div class="card-content">
+                        <h2>HABITACIÓN MATRIMONIAL</h2>
+                        <hr>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-user-friends"></i>
+                                1-2 Personas
+                            </div>
+                            <div>
+                                <i class="fas fa-wifi"></i>
+                                WiFi
+                            </div>
+                        </div>
+                        <div class="features">
+                            <div>
+                                <i class="fas fa-bed"></i>
+                                Cama 2 plazas
+                            </div>
+                            <div>
+                                <i class="fas fa-tv"></i>
+                                TV Smart
+                            </div>
+                        </div>
+                    </div>
+                    <button class="reserve-button" data-room-type="HABITACIÓN MATRIMONIAL"
+                        data-room-image="imagenes/habimatri1.jpg">
+                        RESERVAR - S/.5.00
+                    </button>
+                </div>
+                <?php include 'generar-habitaciones.php'; ?>
+            </div>
+            <div id="modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <span id="close-modal" class="close">&times;</span>
+                    <p id="modal-message"></p>
+                </div>
+            </div>
+
+
+        </div><br><br>
+        <div id="next-step1" style="display: none;">
+            <div class="container-form">
+                <div id="myapp-random-container">
+                    <div class="myapp-random-reservation-container">
+                        <img alt="Hotel room with two beds, a nightstand, and a window with curtains" height="200"
+                            src="https://storage.googleapis.com/a1aa/image/QSdqPmUg4NrmAJ1RacHIhFOzBqBMH9LUFYmmjbXd43xtDFeJA.jpg"
+                            width="300" />
+                        <div class="myapp-random-reservation-details">
+                            <h2>TÚ RESERVA</h2>
+                            <div class="myapp-random-reservation-info">
+                                <div>
+                                    <small>Check-in</small>
+                                    <span id="start-date">--</span>
+                                    <small id="start-day">--</small>
+                                </div>
+                                <div>
+                                    <small>Check-out</small>
+                                    <span id="end-date">--</span>
+                                    <small id="end-day">--</small>
+                                </div>
+                            </div>
+                            <div class="myapp-random-reservation-summary">
+                                <div>
+                                    <span id="huesped">0</span>
+                                    <small>HUESPED</small>
+                                </div>
+                                <div>
+                                    <span id="noches">0</span>
+                                    <small>NOCHES</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="formcontacto" id="form_reservas">
+                    <div class="formcontainer">
+                        <div class="formheader">Contacto</div>
+                        <div class="formform-container">
+                            <div class="formform-group">
+                                <label for="nombres" class="formform-label">Nombres<span
+                                        class="formrequired">*</span></label>
+                                <input type="text" id="nombres" name="nombres" class="formform-input">
+                                <label for="dni" class="formform-label">DNI<span class="formrequired">*</span></label>
+                                <input type="text" id="dni" name="dni" class="formform-input">
+                                <label for="email" class="formform-label">Correo Electrónico<span
+                                        class="formrequired">*</span></label>
+                                <input type="email" id="email" name="email" class="formform-input">
+                            </div>
+                            <div class="formdivider"></div>
+                            <div class="formform-group">
+                                <label for="apellidos" class="formform-label">Apellidos<span
+                                        class="formrequired">*</span></label>
+                                <input type="text" id="apellidos" name="apellidos" class="formform-input">
+                                <label for="telefono" class="formform-label">Número de teléfono<span
+                                        class="formrequired">*</span></label>
+                                <input type="text" id="telefono" name="telefono" class="formform-input">
+                            </div>
+                        </div>
+                        <div class="formbutton-container">
+                            <button id="openModalBtn" class="btn">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">POLITICAS DEL HOSTAL </h5>
+                            <button class="close-button">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <li class="lista_modal">
+                                No se permiten mascotas en las instalaciones del hostal.
+                            </li>
+                            <li class="lista_modal">
+                                Está prohibido fumar en cualquier área del hostal, incluyendo las habitaciones,
+                                áreas
+                                comunes y baños.
+                            </li>
+                            <li class="lista_modal">
+                                Solo se permite consumir las bebidas que se vender en el hostal
+                            </li>
+                            <li class="lista_modal">
+                                No está permitido traer bebidas del exterior
+                            </li>
+                            <li class="lista_modal">
+                                Cada vez que salga del hostal, debe dejar la llave de su habitación en la recepción.
+                            </li>
+                            <li class="lista_modal">
+                                El hostal no se hace responsable por objetos de valor dejados en las
+                                habitaciones.<br>
+                            </li>
+                            <li class="lista_modal">
+                                Se recomienda no dejar objetos de valor en los cuartos.<br>
+                            </li>
+                            <li class="lista_modal">
+                                El horario de ingreso es a partir de la 1:00 de la tarde.<br>
+                            </li>
+                            <li class="lista_modal">
+                                El horario de salida es hasta las 12:00 del mediodía.<br>
+                            </li>
+                            <li class="lista_modal">
+                                Si el huésped no realiza su salida antes de las 12:00 del mediodía y permanece en la
+                                habitación, se le cobrará un cargo adicional.
+                            </li>
+                            <li class="lista_modal">
+                                Se espera que todos los huéspedes respeten las normas del hostal y mantengan un
+                                ambiente tranquilo y respetuoso para todos los presentes.<br>
+                            </li>
+
+                        </div>
+                        <div class="modal-footer">
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="termsCheckbox">
+                                <label class="form-check-label" for="termsCheckbox">
+                                    He leído y acepto los términos y condiciones
+                                </label>
+                            </div>
+                            <button class="btn btn-primary" id="acceptBtn">aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="next-step2" style="display: none;">
+                <div class="pago">
+                    <div class="metodo-container">
+                        <div class="metodo-header">
+                            MÉTODOS DE PAGO
+                        </div>
+                        <div class="metodo-seccion">
+                            <div class="metodo-titulo">
+                                Billetera Digital
+                            </div>
+                            <div class="metodo-pago">
+                                <img alt="Yape" height="60" src="imagenes/yape.png" width="60" />
+                                <img alt="Plin" height="60" src="imagenes/plin.png" width="60" />
+                            </div>
+                        </div>
+                        <div class="metodo-seccion">
+                            <div class="metodo-titulo">
+                                Trasferencia Bancaria
+                            </div>
+                            <div class="metodo-pago">
+                                <img alt="Interbank" height="60" src="imagenes/interbank.png" width="60" />
+                                <img alt="BBVA" height="60" src="imagenes/bbva.png" width="60" />
+                                <img alt="BCP" height="60" src="imagenes/bcp.png" width="60" />
+                            </div>
+                        </div>
+                        <button type="button" class="metodo-boton" onclick="goBackToPreviousStep()">
+                            Regresar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="next-step3" style="display: none;">
+            <div class="resumen-container">
+                <div class="header-with-line">
+                    <span>RESUMEN</span>
+                </div>
+                <br><br>
+
+                <div class="resumen-info">
+                    <div class="form-fields">
+                        <div class="info-group">
+                            <label>Nombres*</label>
+                            <input type="text" />
+                        </div>
+                        <div class="info-group">
+                            <label>Apellidos*</label>
+                            <input type="text" />
+                        </div>
+                        <div class="info-group">
+                            <label>DNI*</label>
+                            <input type="text" />
+                        </div>
+                        <div class="info-group">
+                            <label>Número de teléfono*</label>
+                            <input type="text" />
+                        </div>
+                        <div class="info-group">
+                            <label>Correo Electrónico*</label>
+                            <input type="email" />
+                        </div>
+                    </div>
+
+                    <div class="resumen-calendar">
+                        <div class="date-selector">
+                            <div class="date-selector-header">Fechas Seleccionadas</div>
+                            <div class="date-selector-content">
+                                <div class="date-box">
+                                    <div>Llegada</div>
+                                    <div class="day" id="start-date1"></div>
+                                    <div class="month-year" id="start-day1">0</div>
+                                </div>
+                                <div class="date-box">
+                                    <div>Salida</div>
+                                    <div class="day" id="end-date1">0</div>
+                                    <div class="month-year" id="end-day1">0</div>
+                                </div>
+                            </div>
+                            <div class="nights">
+                                <div>Noches</div>
+                                <span id="noches1">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br><br>
+
+                <div class="header-with-line">
+                    <span>MÉTODO DE PAGO</span>
+                </div>
+
+                <div class="payment-method">
+                    <img class="metod_pago" src="imagenes/bcp.png" alt="Yape logo" />
+                </div>
+
+                <div class="header-with-line">
+                    <span>HABITACIONES</span>
+                </div>
+                <br>
+
+                <div class="rooms-grid">
+
+                </div>
+
+                <div class="total-button">
+                    <button id="confirmar">CONFIRMAR</button>
+                    <button class="next-button2" id="next-button2">REGRESAR</button>
+
+                </div>
+            </div>
+        </div><br><br><br><br><br><br><br><br><br>
+        
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Obtener todos los círculos y títulos
+                const circulos = document.querySelectorAll('.circulo');
+                const titles = document.querySelectorAll('.title');
+
+                function updateStepAnimation(stepNumber) {
+                    // Remover animación de todos los elementos
+                    circulos.forEach((circulo, index) => {
+                        circulo.style.animation = 'none';
+                        titles[index].style.animation = 'none';
+                    });
+
+                    // Añadir animación al paso actual
+                    if (stepNumber >= 0 && stepNumber < circulos.length) {
+                        // Forzar reinicio de la animación
+                        void circulos[stepNumber].offsetWidth;
+                        void titles[stepNumber].offsetWidth;
+
+                        // Aplicar la animación al paso actual
+                        circulos[stepNumber].style.animation = 'bounce 1s ease-in-out infinite';
+                        titles[stepNumber].style.animation = 'bounce 1s ease-in-out infinite';
+                    }
+                }
+
+                // Variable para mantener el paso actual
+                let currentStep = 0;
+
+                // Activar animación inicial
+                updateStepAnimation(currentStep);
+
+                // Manejar click en botón siguiente (usando clase)
+                document.querySelector('.next-button')?.addEventListener('click', function () {
+                    currentStep = Math.min(currentStep + 1, circulos.length - 1);
+                    updateStepAnimation(currentStep);
+                });
+
+                // Manejar click en botón anterior normal (usando clase)
+                document.querySelectorAll('.next-button1, .next-button2').forEach(button => {
+                    button.addEventListener('click', function () {
+                        currentStep = Math.max(currentStep - 1, 0);
+                        updateStepAnimation(currentStep);
+                    });
+                });
+
+            });
+        </script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script>
+            // Variables globales
+            window.fechaLlegada = null;
+            window.fechaSalida = null;
+
+            function inicializarFechaActual() {
+                const hoy = new Date();
+                const manana = new Date(hoy);
+                manana.setDate(hoy.getDate() + 1);
+
+                actualizarFecha(
+                    document.getElementById("llegada-day"),
+                    document.getElementById("llegada-number"),
+                    document.getElementById("llegada-month-year"),
+                    hoy
+                );
+                actualizarFecha(
+                    document.getElementById("salida-day"),
+                    document.getElementById("salida-number"),
+                    document.getElementById("salida-month-year"),
+                    manana
+                );
+
+                window.fechaLlegada = hoy;
+                window.fechaSalida = manana;
+
+                calcularNoches();
+                actualizarResumen();
+                actualizarHabitaciones();
+
+                const evento = new CustomEvent('fechasActualizadas', {
+                    detail: { fechaLlegada: hoy, fechaSalida: manana }
+                });
+                window.dispatchEvent(evento);
+            }
+
+            function actualizarFecha(elementDay, elementNumber, elementMonthYear, fecha) {
+                const optionsDay = { weekday: 'long' };
+                const optionsNumber = { day: '2-digit' };
+                const optionsMonthYear = { month: 'short', year: 'numeric' };
+
+                elementDay.textContent = fecha.toLocaleDateString('es-ES', optionsDay);
+                elementNumber.textContent = fecha.toLocaleDateString('es-ES', optionsNumber);
+                elementMonthYear.textContent = fecha.toLocaleDateString('es-ES', optionsMonthYear).toUpperCase();
+            }
+
+            function calcularNoches() {
+                if (window.fechaLlegada && window.fechaSalida) {
+                    const diffTime = Math.abs(window.fechaSalida - window.fechaLlegada);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    document.getElementById("nights-count").textContent = diffDays;
+                    document.getElementById("noches").textContent = diffDays;
+                    document.getElementById("noches1").textContent = diffDays;
+                }
+            }
+
+            function actualizarResumen() {
+                if (window.fechaLlegada) {
+                    document.getElementById('start-date').textContent = window.fechaLlegada.toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
+                    document.getElementById('start-day').textContent = window.fechaLlegada.toLocaleDateString('es-ES', { weekday: 'long' });
+                    document.getElementById('start-date1').textContent = window.fechaLlegada.toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
+                    document.getElementById('start-day1').textContent = window.fechaLlegada.toLocaleDateString('es-ES', { weekday: 'long' });
+                }
+
+                if (window.fechaSalida) {
+                    document.getElementById('end-date').textContent = window.fechaSalida.toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
+                    document.getElementById('end-day').textContent = window.fechaSalida.toLocaleDateString('es-ES', { weekday: 'long' });
+                    document.getElementById('end-date1').textContent = window.fechaSalida.toLocaleDateString('es-ES', { day: '2-digit', month: 'short' });
+                    document.getElementById('end-day1').textContent = window.fechaSalida.toLocaleDateString('es-ES', { weekday: 'long' });
+                }
+
+                calcularNoches();
+                actualizarHabitaciones();
+            }
+
+            function actualizarHabitaciones() {
+                const numHabitaciones = document.getElementById('num-habitaciones').value;
+                // Lógica para actualizar habitaciones
+            }
+
+            // Configuración de Flatpickr
+            flatpickr("#fecha-llegada", {
+                dateFormat: "Y-m-d",
+                defaultDate: new Date(),
+                minDate: "today",
+                onChange: function (selectedDates, dateStr) {
+                    window.fechaLlegada = selectedDates[0];
+                    actualizarFecha(
+                        document.getElementById("llegada-day"),
+                        document.getElementById("llegada-number"),
+                        document.getElementById("llegada-month-year"),
+                        selectedDates[0]
+                    );
+
+                    const salidaPicker = document.getElementById("fecha-salida")._flatpickr;
+                    salidaPicker.set("minDate", selectedDates[0]);
+
+                    calcularNoches();
+                    actualizarResumen();
+
+                    const eventoCalendario2 = new CustomEvent('fechaLlegadaActualizada', {
+                        detail: { fecha: selectedDates[0] }
+                    });
+                    const eventoManual = new CustomEvent('flatpickrLlegadaActualizada', {
+                        detail: { fecha: selectedDates[0] }
+                    });
+                    window.dispatchEvent(eventoCalendario2);
+                    window.dispatchEvent(eventoManual);
+                }
+            });
+
+            flatpickr("#fecha-salida", {
+                dateFormat: "Y-m-d",
+                defaultDate: new Date(new Date().setDate(new Date().getDate() + 1)),
+                minDate: "today",
+                onChange: function (selectedDates, dateStr) {
+                    window.fechaSalida = selectedDates[0];
+                    actualizarFecha(
+                        document.getElementById("salida-day"),
+                        document.getElementById("salida-number"),
+                        document.getElementById("salida-month-year"),
+                        selectedDates[0]
+                    );
+
+                    calcularNoches();
+                    actualizarResumen();
+
+                    const eventoCalendario2 = new CustomEvent('fechaSalidaActualizada', {
+                        detail: { fecha: selectedDates[0] }
+                    });
+                    const eventoManual = new CustomEvent('flatpickrSalidaActualizada', {
+                        detail: { fecha: selectedDates[0] }
+                    });
+                    window.dispatchEvent(eventoCalendario2);
+                    window.dispatchEvent(eventoManual);
+                }
+            });
+
+            document.addEventListener('DOMContentLoaded', inicializarFechaActual);
+        </script>
+
+        <script>
+            // OCULTAR Y APARECER CALENDARIO 
+            document.addEventListener('DOMContentLoaded', () => {
+                const contenido = document.getElementById('contenido');
+                contenido.style.display = 'none';  // Oculta el calendario inicialmente
+            });
+
+            // Tu función existente para mostrar/ocultar
+            function mostrarContenido() {
+                var contenido = document.getElementById("contenido");
+                var estiloActual = window.getComputedStyle(contenido).display;
+
+                if (estiloActual === "none") {
+                    contenido.style.display = "block";
+                } else {
+                    contenido.style.display = "none";
+                }
+            }
+        </script>
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            const steps = ["contenido", "next-step", "next-step1", "next-step3"];
+            let currentStepIndex = 0;
+            let totalRoomsToSelect = 0;
+            let selectedRoomsCount = 0;
+            let guestSelectionComplete = false;
+
+            // Guardar los displays originales cuando se carga la página
+            function saveOriginalDisplays() {
+                const elementsToManage = [
+                    '.next-button',
+                    '.next-button1',
+                    '.calendario',
+                    '.calendarioo',
+                    '.cuadrado',
+                    '.calendar-container',
+                    '#habitacionesModal'
+                ];
+
+                elementsToManage.forEach(selector => {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        element.dataset.originalDisplay = getComputedStyle(element).display;
+                    }
+                });
+            }
+
+            function mostrarContenido() {
+                const contenido = document.getElementById("contenido");
+                if (!contenido) return;
+
+                const estiloActual = window.getComputedStyle(contenido).display;
+                contenido.style.display = estiloActual === "none" ? "block" : "none";
+            }
+
+            // Función para manejar la visibilidad de elementos según el paso
+            function handleStepVisibility(currentStep) {
+                const elementsToManage = [
+                    '.next-button',
+                    '.next-button1',
+                    '.calendario',
+                    '.calendarioo',
+                    '.cuadrado',
+                    '.calendar-container',
+                    '#habitacionesModal'
+                ];
+
+                elementsToManage.forEach(selector => {
+                    const element = document.querySelector(selector);
+                    if (element) {
+                        if (currentStep === 'next-step3') {
+                            element.style.display = 'none';
+                        } else {
+                            element.style.display = element.dataset.originalDisplay || 'block';
+                        }
+                    }
+                });
+            }
+
+            // Funciones de validación
+            function validateGuestFields() {
+                const numHabitaciones = document.getElementById('num-habitaciones');
+
+                if (!numHabitaciones || numHabitaciones.value === '# de Habitaciones') {
+                    showAlert('Campos incompletos', 'Por favor, seleccione el número de habitaciones.', 'warning');
+                    return false;
+                }
+
+                if (!guestSelectionComplete) {
+                    showAlert('Selección incompleta', 'Por favor, seleccione el número de adultos y niños para cada habitación.', 'warning');
+                    return false;
+                }
+
+                return true;
+            }
+
+            function validateRequiredFields() {
+                const requiredFields = document.querySelectorAll('[required]');
+                for (let field of requiredFields) {
+                    if (!field.value || field.selectedIndex === 0) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
+            // Función para mostrar alertas de manera consistente
+            function showAlert(title, text, icon) {
+                Swal.fire({
+                    title,
+                    text,
+                    icon,
+                    confirmButtonText: 'Aceptar',
+                    customClass: {
+                        popup: 'content-modal-bt',
+                        title: 'titulo-modal',
+                        content: 'my-swal-content',
+                        confirmButton: 'button-modal-bt',
+                    }
+                });
+            }
+
+            // Funciones de navegación
+            function goToStep(stepIndex) {
+                steps.forEach((stepId, index) => {
+                    const step = document.getElementById(stepId);
+                    if (step) {
+                        step.style.display = index === stepIndex ? "block" : "none";
+                    }
+                });
+
+                // Manejar visibilidad de elementos según el paso actual
+                handleStepVisibility(steps[stepIndex]);
+            }
+
+            function goToNextStep() {
+                if (currentStepIndex < steps.length - 1) {
+                    currentStepIndex++;
+                    goToStep(currentStepIndex);
+                }
+            }
+
+            function goToPreviousStep() {
+                if (currentStepIndex > 0) {
+                    currentStepIndex--;
+                    goToStep(currentStepIndex);
+                }
+            }
+
+            // Validaciones específicas para el paso de información personal
+            function validatePersonalInfo() {
+                const nombres = document.getElementById("nombres").value.trim();
+                const apellidos = document.getElementById("apellidos").value.trim();
+                const dni = document.getElementById("dni").value.trim();
+                const telefono = document.getElementById("telefono").value.trim();
+                const email = document.getElementById("email").value.trim();
+                const termsAccepted = document.getElementById("termsCheckbox").checked;
+
+                if (!nombres || !apellidos || !dni || !telefono || !email) {
+                    showAlert('Campos incompletos', 'Por favor, complete todos los campos obligatorios antes de continuar.', 'warning');
+                    return false;
+                }
+
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    showAlert('Email inválido', 'Por favor, ingrese un correo electrónico válido.', 'warning');
+                    return false;
+                }
+
+                if (!/^\d{8}$/.test(dni)) {
+                    showAlert('DNI inválido', 'El DNI debe contener 8 dígitos numéricos.', 'warning');
+                    return false;
+                }
+
+                if (!/^\d{9}$/.test(telefono)) {
+                    showAlert('Teléfono inválido', 'El número de teléfono debe contener 9 dígitos numéricos.', 'warning');
+                    return false;
+                }
+
+                if (!termsAccepted) {
+                    showAlert('Términos y Condiciones', 'Debe aceptar los términos y condiciones para continuar.', 'warning');
+                    return false;
+                }
+
+                return true;
+            }
+
+            // Event Listeners
+            document.addEventListener('DOMContentLoaded', function () {
+                // Ocultar el calendario inicialmente
+                const contenido = document.getElementById('contenido');
+                if (contenido) {
+                    contenido.style.display = 'none';
+                }
+
+                saveOriginalDisplays();
+
+                // Inicializar el primer paso pero mantener el calendario oculto
+                steps.forEach((stepId, index) => {
+                    const step = document.getElementById(stepId);
+                    if (step) {
+                        // Si es el contenido (calendario), mantenerlo oculto
+                        if (stepId === 'contenido') {
+                            step.style.display = 'none';
+                        } else {
+                            step.style.display = index === currentStepIndex ? "block" : "none";
+                        }
+                    }
+                });
+
+                // Listener para el número de habitaciones
+                document.getElementById('num-habitaciones')?.addEventListener('change', function () {
+                    totalRoomsToSelect = parseInt(this.value) || 0;
+                    selectedRoomsCount = 0;
+                    guestSelectionComplete = false;
+                });
+
+                // Listeners para los botones de reserva
+                document.querySelectorAll('.reserve-button').forEach((button) => {
+                    button.addEventListener('click', function () {
+                        if (selectedRoomsCount < totalRoomsToSelect) {
+                            selectedRoomsCount++;
+                        }
+                    });
+                });
+
+                // Listener principal para el botón siguiente
+                document.getElementById("next-button")?.addEventListener("click", function (e) {
+                    e.preventDefault();
+
+                    switch (steps[currentStepIndex]) {
+                        case "contenido":
+                            if (validateGuestFields()) goToNextStep();
+                            break;
+                        case "next-step":
+                            if (selectedRoomsCount < totalRoomsToSelect) {
+                                showAlert('Habitaciones insuficientes',
+                                    `Por favor, selecciona las ${totalRoomsToSelect} habitaciones antes de continuar.`,
+                                    'warning');
+                            } else {
+                                goToNextStep();
+                            }
+                            break;
+                        case "next-step1":
+                            if (validatePersonalInfo()) goToNextStep();
+                            break;
+                        default:
+                            if (validateRequiredFields()) {
+                                goToNextStep();
+                                if (typeof actualizarReserva === 'function') {
+                                    actualizarReserva();
+                                }
+                            } else {
+                                showAlert('Campos incompletos',
+                                    'Por favor, complete todos los campos requeridos antes de continuar.',
+                                    'error');
+                            }
+                    }
+                });
+
+                // Listeners para los botones de retroceso
+                ["next-button1", "next-button2"].forEach(buttonId => {
+                    document.getElementById(buttonId)?.addEventListener("click", function (e) {
+                        e.preventDefault();
+                        goToPreviousStep();
+                    });
+                });
+            });
+
+            // Modificación de la función goToStep para respetar la visibilidad del calendario
+            function goToStep(stepIndex) {
+                steps.forEach((stepId, index) => {
+                    const step = document.getElementById(stepId);
+                    if (step) {
+                        // Si es el contenido (calendario), solo cambiar su visibilidad si ya estaba visible
+                        if (stepId === 'contenido' && window.getComputedStyle(step).display === 'none') {
+                            // No hacer nada, mantener oculto
+                        } else {
+                            step.style.display = index === stepIndex ? "block" : "none";
+                        }
+                    }
+                });
+
+                handleStepVisibility(steps[stepIndex]);
+            }
+
+        </script>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            //SELECCION DE HABITACIOOOOOOOOOOON
+            let roomsData = {};
+            let remainingSelections = 0;
+            let currentSelection = 1;
+
+            function initializeRoomSelection() {
+                const numHabitacionesSelect = document.getElementById('num-habitaciones');
+                const habitacionesContainer = document.getElementById('habitaciones-container');
+                const selectButtons = document.querySelectorAll('.reserve-button');
+
+                numHabitacionesSelect.addEventListener('change', function () {
+                    remainingSelections = parseInt(this.value) || 0;
+                    roomsData = {};
+                    updateRoomCards(remainingSelections);
+                    habitacionesContainer.classList.remove('hidden');
+                    currentSelection = 1;
+
+                    Swal.fire({
+                        title: 'Selección de habitaciones',
+                        text: `Puedes seleccionar hasta ${remainingSelections} habitaciones.`,
+                        icon: 'info',
+                        confirmButtonText: 'Aceptar',
+                        customClass: {
+                            popup: 'content-modal-bt',
+                            title: 'titulo-modal',
+                            content: 'my-swal-content',
+                            confirmButton: 'button-modal-bt',
+                        },
+                    });
+                });
+
+                selectButtons.forEach((button) => {
+                    button.addEventListener('click', function () {
+                        if (remainingSelections > 0) {
+                            const roomType = this.dataset.roomType;
+                            const roomImage = this.dataset.roomImage;
+
+                            // Obtener los valores de adultos y niños del modal
+                            const adultsSelect = document.getElementById(`adultos-${currentSelection}`);
+                            const childrenSelect = document.getElementById(`ninos-${currentSelection}`);
+
+                            // Obtener los valores seleccionados
+                            const adultsValue = adultsSelect ? adultsSelect.value : '0';
+                            const childrenValue = childrenSelect ? childrenSelect.value : '0';
+
+                            roomsData[currentSelection] = {
+                                type: roomType,
+                                image: roomImage,
+                                adults: adultsValue,
+                                children: childrenValue
+                            };
+
+                            Swal.fire({
+                                title: '¡Habitación seleccionada!',
+                                text: `${roomType} asignada a Habitación #${currentSelection}`,
+                                icon: 'success',
+                                confirmButtonText: 'Aceptar',
+                                customClass: {
+                                    popup: 'content-modal-bt',
+                                    title: 'titulo-modal',
+                                    content: 'my-swal-content',
+                                    confirmButton: 'button-modal-bt',
+                                },
+                            });
+
+                            remainingSelections--;
+                            currentSelection++;
+                            updateRoomCards(parseInt(numHabitacionesSelect.value));
+                        } else {
+                            Swal.fire({
+                                title: 'No más selecciones',
+                                text: 'Ya no puedes seleccionar más habitaciones.',
+                                icon: 'warning',
+                                confirmButtonText: 'Aceptar',
+                                customClass: {
+                                    popup: 'content-modal-bt',
+                                    title: 'titulo-modal',
+                                    content: 'my-swal-content',
+                                    confirmButton: 'button-modal-bt',
+                                },
+                            });
+                        }
+                    });
+                });
+            }
+
+            function updateRoomCards(numRooms) {
+                const roomsGrid = document.querySelector('.rooms-grid');
+                roomsGrid.innerHTML = '';
+
+                for (let i = 1; i <= numRooms; i++) {
+                    const roomInfo = roomsData[i] || {};
+                    const roomCard = document.createElement('div');
+                    roomCard.className = 'room-card';
+
+                    roomCard.innerHTML = `
+            <p class="room-number">HABITACIÓN #${i}</p>
+            <img src="${roomInfo.image || '/api/placeholder/250/150'}" 
+                 alt="Habitación ${i}" 
+                 class="room-image" />
+            <p class="room-type">${roomInfo.type || 'Tipo no seleccionado'}</p>
+            <p class="resum_adultos">ADULTOS: ${roomInfo.adults || '0'}</p>
+            <p class="resum_niños">NIÑOS: ${roomInfo.children || '0'}</p>
+        `;
+
+                    roomsGrid.appendChild(roomCard);
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', initializeRoomSelection);
+        </script>
+
+        <script>
+            //MODALLLLLLLLLLL
+            // Obtener elementos del DOM
+            const modal = document.getElementById('myModal');
+            const openBtn = document.getElementById('openModalBtn');
+            const closeBtn = document.querySelector('.close-button');
+            const closeModalBtn = document.getElementById('acceptBtn');
+
+            // Función para abrir el modal
+            function openModal() {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevenir scroll del body
+            }
+
+            // Función para cerrar el modal
+            function closeModal() {
+                modal.style.display = 'none';
+                document.body.style.overflow = ''; // Restaurar scroll del body
+            }
+
+            // Event listeners
+            openBtn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            closeModalBtn.addEventListener('click', closeModal);
+
+            // Cerrar el modal si se hace clic fuera de él
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Cerrar el modal con la tecla ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    closeModal();
+                }
+            });
+
+        </script>
+        <script>
+            // PASAR A PAGOOOOOOOOOOOOOOOOOOOOO
+
+            document.getElementById('acceptBtn').addEventListener('click', function () {
+                // Verificar si el checkbox está marcado
+                const termsCheckbox = document.getElementById('termsCheckbox');
+
+                if (!termsCheckbox.checked) {
+                    // Si no está marcado, mostrar mensaje de error con SweetAlert
+                    Swal.fire({
+                        title: 'Términos y Condiciones',
+                        text: 'Debe aceptar los términos y condiciones para continuar.',
+                        icon: 'warning',
+                        confirmButtonText: 'Aceptar',
+                        customClass: {
+                            popup: 'content-modal-bt',
+                            title: 'titulo-modal',
+                            content: 'my-swal-content',
+                            confirmButton: 'button-modal-bt',
+                        }
+                    });
+                    return; // Detener la ejecución si no está marcado
+                }
+
+                // Si el checkbox está marcado, continuar con el proceso
+                // Cerrar el modal
+                var modal = document.getElementById('myModal');
+                modal.style.display = 'none';
+
+                // Ocultar el formulario de reservas
+                document.getElementById('form_reservas').style.display = 'none';
+
+                // Mostrar el siguiente paso (next-step2)
+                document.getElementById('next-step2').style.display = 'block';
+            });
+
+        </script>
+        <script>
+
+            function goBackToPreviousStep() {
+                // Ocultar el paso actual (step2)
+                document.getElementById('next-step2').style.display = 'none';
+
+                // Mostrar el paso anterior (step1)
+                document.getElementById('form_reservas').style.display = 'block';
+            }
+
+        </script>
+
+        <script>
+            //MODAL ADULTOS Y NIÑOOOOOOOOOOOOOOOS
+            function openModal() {
+                const numHabitaciones = document.getElementById('num-habitaciones').value;
+                if (numHabitaciones === '# de Habitaciones') {
+                    alert('Por favor, seleccione primero el número de habitaciones');
+                    return;
+                }
+                generateRooms();
+                document.getElementById('habitacionesModal').style.display = 'block';
+            }
+
+            function closeModal() {
+                if (validateSelections(true)) {
+                    document.getElementById('habitacionesModal').style.display = 'none';
+                }
+            }
+
+            window.onclick = function (event) {
+                const modal = document.getElementById('habitacionesModal');
+                if (event.target == modal) {
+                    if (validateSelections(true)) {
+                        closeModal();
+                    }
+                }
+            }
+
+            function generateRooms() {
+                const numHabitaciones = parseInt(document.getElementById('num-habitaciones').value);
+                const container = document.getElementById('habitaciones-container');
+                container.innerHTML = '';
+
+                for (let i = 1; i <= numHabitaciones; i++) {
+                    const roomDiv = document.createElement('div');
+                    roomDiv.className = 'select-habitacion-item';
+
+                    const roomTitle = document.createElement('div');
+                    roomTitle.className = 'select-habitacion-titulo';
+                    roomTitle.textContent = `Habitación #${i}`;
+
+                    const occupantsDiv = document.createElement('div');
+                    occupantsDiv.className = 'select-habitacion-selectores';
+
+                    const adultosSelect = createSelect(`adultos-${i}`, 'Adultos', 1, 5);
+                    const ninosSelect = createSelect(`ninos-${i}`, 'Niños', 0, 5);
+
+                    adultosSelect.required = true;
+                    ninosSelect.required = true;
+
+                    adultosSelect.addEventListener('change', function () {
+                        validateField(this);
+                    });
+                    ninosSelect.addEventListener('change', function () {
+                        validateField(this);
+                    });
+
+                    occupantsDiv.appendChild(adultosSelect);
+                    occupantsDiv.appendChild(ninosSelect);
+
+                    roomDiv.appendChild(roomTitle);
+                    roomDiv.appendChild(occupantsDiv);
+                    container.appendChild(roomDiv);
+                }
+
+                const aceptarButton = document.createElement('button');
+                aceptarButton.className = 'select-habitacion1-boton';
+                aceptarButton.textContent = 'Aceptar';
+                aceptarButton.onclick = validateAndClose;
+
+                container.appendChild(aceptarButton);
+            }
+
+            function createSelect(id, label, min, max) {
+                const select = document.createElement('select');
+                select.id = id;
+                select.required = true;
+
+                const defaultOption = document.createElement('option');
+                defaultOption.value = "";
+                defaultOption.disabled = true;
+                defaultOption.selected = true;
+                defaultOption.textContent = label;
+                select.appendChild(defaultOption);
+
+                for (let j = min; j <= max; j++) {
+                    const option = document.createElement('option');
+                    option.value = j;
+                    option.textContent = j;
+                    select.appendChild(option);
+                }
+
+                return select;
+            }
+
+            function validateField(field) {
+                if (field.value === "" || field.value === field.options[0].textContent) {
+                    field.style.border = '2px solid red';
+                    return false;
+                } else {
+                    field.style.border = '1px solid #ccc';
+                    return true;
+                }
+            }
+
+            function validateSelections(silent = false) {
+                const numHabitaciones = parseInt(document.getElementById('num-habitaciones').value);
+                let isValid = true;
+                let invalidFields = [];
+                let allSelected = true;
+
+                for (let i = 1; i <= numHabitaciones; i++) {
+                    const adultos = document.getElementById(`adultos-${i}`);
+                    const ninos = document.getElementById(`ninos-${i}`);
+
+                    if (!validateField(adultos)) {
+                        isValid = false;
+                        invalidFields.push(`Adultos en Habitación #${i}`);
+                        allSelected = false;
+                    }
+                    if (!validateField(ninos)) {
+                        isValid = false;
+                        invalidFields.push(`Niños en Habitación #${i}`);
+                        allSelected = false;
+                    }
+                }
+
+                if (!isValid && !silent) {
+                    Swal.fire({
+                        title: 'Campos incompletos',
+                        text: `Por favor, complete los siguientes campos:\n${invalidFields.join('\n')}`,
+                        icon: 'warning',
+                        confirmButtonText: 'Aceptar',
+                        customClass: {
+                            popup: 'content-modal-bt',
+                            title: 'titulo-modal',
+                            content: 'my-swal-content',
+                            confirmButton: 'button-modal-bt',
+                        }
+                    });
+                }
+
+                return isValid && allSelected;
+            }
+
+            function validateAndClose() {
+                if (validateSelections()) {
+                    guestSelectionComplete = true;
+                    closeModal();
+                }
+            }
+
+            document.getElementById('num-habitaciones').addEventListener('change', function () {
+                guestSelectionComplete = false;
+                totalRoomsToSelect = parseInt(this.value) || 0;
+                selectedRoomsCount = 0;
+            });
+        </script>
+
+        <script>
+            // TOTAL DE HUESPEDES RESUMEEEEEEEEEEEEEEEEEEN
+            function updateTotalGuests() {
+                const container = document.getElementById('habitaciones-container');
+                let totalAdults = 0;
+                let totalChildren = 0;
+
+                // Obtener todos los selectores de adultos y niños
+                const rooms = container.children;
+                for (let i = 0; i < rooms.length; i++) {
+                    const adultSelect = document.getElementById(`adultos-${i + 1}`);
+                    const childSelect = document.getElementById(`ninos-${i + 1}`);
+
+                    if (adultSelect.value !== 'Adultos') {
+                        totalAdults += parseInt(adultSelect.value);
+                    }
+                    if (childSelect.value !== 'Niños') {
+                        totalChildren += parseInt(childSelect.value);
+                    }
+                }
+
+                // Actualizar el span de huéspedes
+                const totalGuests = totalAdults + totalChildren;
+                const huespedSpan = document.getElementById('huesped');
+                if (huespedSpan) {
+                    huespedSpan.textContent = totalGuests;
+                }
+            }
+
+            function openModal() {
+                const numHabitaciones = document.getElementById('num-habitaciones').value;
+                if (numHabitaciones === '# de Habitaciones') {
+                    alert('Por favor, seleccione primero el número de habitaciones');
+                    return;
+                }
+                generateRooms();
+                document.getElementById('habitacionesModal').style.display = 'block';
+            }
+
+            function closeModal() {
+                document.getElementById('habitacionesModal').style.display = 'none';
+                updateTotalGuests(); // Actualizar el total al cerrar el modal
+            }
+
+            window.onclick = function (event) {
+                const modal = document.getElementById('habitacionesModal');
+                if (event.target == modal) {
+                    closeModal();
+                }
+            }
+
+            function generateRooms() {
+                const numHabitaciones = parseInt(document.getElementById('num-habitaciones').value);
+                const container = document.getElementById('habitaciones-container');
+                container.innerHTML = '';
+
+                for (let i = 1; i <= numHabitaciones; i++) {
+                    const roomDiv = document.createElement('div');
+                    roomDiv.className = 'select-habitacion-item';
+
+                    const roomTitle = document.createElement('div');
+                    roomTitle.className = 'select-habitacion-titulo';
+                    roomTitle.textContent = `Habitación #${i}`;
+
+                    const occupantsDiv = document.createElement('div');
+                    occupantsDiv.className = 'select-habitacion-selectores';
+
+                    const adultosSelect = document.createElement('select');
+                    adultosSelect.id = `adultos-${i}`;
+                    adultosSelect.required = true;
+                    // Agregar event listener para actualizar el total
+                    adultosSelect.addEventListener('change', updateTotalGuests);
+
+                    const defaultAdultOption = document.createElement('option');
+                    defaultAdultOption.disabled = true;
+                    defaultAdultOption.selected = true;
+                    defaultAdultOption.textContent = 'Adultos';
+                    adultosSelect.appendChild(defaultAdultOption);
+
+                    for (let j = 1; j <= 5; j++) {
+                        const option = document.createElement('option');
+                        option.value = j;
+                        option.textContent = j;
+                        adultosSelect.appendChild(option);
+                    }
+
+                    const ninosSelect = document.createElement('select');
+                    ninosSelect.id = `ninos-${i}`;
+                    ninosSelect.required = true;
+                    // Agregar event listener para actualizar el total
+                    ninosSelect.addEventListener('change', updateTotalGuests);
+
+                    const defaultChildOption = document.createElement('option');
+                    defaultChildOption.disabled = true;
+                    defaultChildOption.selected = true;
+                    defaultChildOption.textContent = 'Niños';
+                    ninosSelect.appendChild(defaultChildOption);
+
+                    for (let j = 0; j <= 5; j++) {
+                        const option = document.createElement('option');
+                        option.value = j;
+                        option.textContent = j;
+                        ninosSelect.appendChild(option);
+                    }
+
+                    occupantsDiv.appendChild(adultosSelect);
+                    occupantsDiv.appendChild(ninosSelect);
+
+                    roomDiv.appendChild(roomTitle);
+                    roomDiv.appendChild(occupantsDiv);
+                    container.appendChild(roomDiv);
+                }
+            }
+        </script>
+
+        <script>
+            //TRANSFERIR DATOS FORMULARIOOOOOOOOOOOOO
+            document.getElementById('openModalBtn').addEventListener('click', function () {
+                // Obtener los valores del primer formulario
+                const nombres = document.getElementById('nombres').value;
+                const apellidos = document.getElementById('apellidos').value;
+                const dni = document.getElementById('dni').value;
+                const telefono = document.getElementById('telefono').value;
+                const email = document.getElementById('email').value;
+
+                // Obtener los campos del segundo formulario
+                const segundoFormulario = document.querySelector('.form-fields');
+                const camposSegundo = segundoFormulario.querySelectorAll('input');
+
+                // Transferir los valores en el orden correcto
+                const valores = [nombres, apellidos, dni, telefono, email];
+
+                // Asignar los valores y hacer los campos de solo lectura
+                camposSegundo.forEach((campo, index) => {
+                    campo.value = valores[index];
+                    campo.readOnly = true;  // Hace que el campo sea de solo lectura
+                    // Opcional: añadir estilo para indicar que es de solo lectura
+                    campo.style.backgroundColor = '#f0f0f0';
+                    campo.style.cursor = 'not-allowed';
+                });
+            });
+
+            // TRANSFERIR PAGOOOOOOOOOOOOOOOOOOO
+            // Obtener todas las imágenes de los métodos de pago
+            const imagenesPago = document.querySelectorAll('.metodo-pago img');
+            // Obtener la imagen donde se mostrará el método seleccionado
+            const imagenSeleccionada = document.querySelector('.payment-method img');
+
+            // Agregar el evento click a cada imagen
+            imagenesPago.forEach(imagen => {
+                imagen.addEventListener('click', function () {
+                    // Obtener la ruta y el alt de la imagen clickeada
+                    const nuevaRuta = this.src;
+                    const nuevoAlt = this.alt;
+
+                    // Actualizar la imagen en el div de payment-method
+                    imagenSeleccionada.src = nuevaRuta;
+                    imagenSeleccionada.alt = nuevoAlt;
+
+                    // Remover la clase selected de todas las imágenes
+                    imagenesPago.forEach(img => {
+                        img.classList.remove('selected');
+                    });
+
+                    // Agregar la clase selected a la imagen clickeada
+                    this.classList.add('selected');
+                });
+            });
+
+            document.getElementById('btn-top').addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script>
+            document.getElementById('confirmar').addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const formData = {
+                    nombre: document.getElementById('nombres').value,
+                    apellido: document.getElementById('apellidos').value,
+                    dni: document.getElementById('dni').value,
+                    celular: document.getElementById('telefono').value,
+                    correo_electronico: document.getElementById('email').value,
+                    fecha_inicio: window.fechaLlegada.toISOString().split('T')[0],
+                    fecha_fin: window.fechaSalida.toISOString().split('T')[0],
+                    num_habitaciones: parseInt(document.getElementById('num-habitaciones').value),
+                    num_adultos: 0,
+                    num_ninos: 0,
+                    habitaciones: [],
+                    metodo_pago: document.querySelector('.payment-method img').alt
+                };
+
+                // Validate number of rooms
+                if (isNaN(formData.num_habitaciones) || formData.num_habitaciones <= 0) {
+                    return Swal.fire({
+                        title: 'Error',
+                        text: 'Por favor ingrese un número válido de habitaciones.',
+                        icon: 'error',
+                        confirmButtonText: 'Aceptar'
+                    });
+                }
+
+                // Calculate total guests and collect room data
+                const container = document.getElementById('habitaciones-container');
+                for (let i = 1; i <= formData.num_habitaciones; i++) {
+                    const adultos = parseInt(document.getElementById(`adultos-${i}`).value);
+                    const ninos = parseInt(document.getElementById(`ninos-${i}`).value);
+
+                    // Validate adultos and niños values
+                    if (isNaN(adultos) || adultos < 0) {
+                        return Swal.fire({
+                            title: 'Error',
+                            text: `Por favor ingrese un número válido de adultos para la habitación ${i}.`,
+                            icon: 'error',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    }
+
+                    if (isNaN(ninos) || ninos < 0) {
+                        return Swal.fire({
+                            title: 'Error',
+                            text: `Por favor ingrese un número válido de niños para la habitación ${i}.`,
+                            icon: 'error',
+                            confirmButtonText: 'Aceptar'
+                        });
+                    }
+
+                    formData.num_adultos += adultos;
+                    formData.num_ninos += ninos;
+
+                    formData.habitaciones.push({
+                        tipo: roomsData[i]?.type || 'Estándar',
+                        adultos: adultos,
+                        ninos: ninos
+                    });
+                }
+
+                // Send data to server
+                fetch('process_reservation.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            Swal.fire({
+                                title: '¡Reserva Confirmada!',
+                                text: `Reservacion confirmada, Gracias por la confianza`,
+                                icon: 'success',
+                                confirmButtonText: 'Aceptar',
+                                customClass: {
+                                    popup: 'content-modal-bt',
+                                    title: 'titulo-modal',
+                                    content: 'my-swal-content',
+                                    confirmButton: 'button-modal-bt',
+                                }
+                            }).then(() => {
+                                window.location.href = 'confirmacion.php?id=' + data.reservation_id;
+                            });
+                        } else {
+                            Swal.fire({
+                                title: 'Error',
+                                text: `Error del servidor: ${data.error}`,
+                                icon: 'error',
+                                confirmButtonText: 'Aceptar',
+                                customClass: {
+                                    popup: 'content-modal-bt',
+                                    title: 'titulo-modal',
+                                    content: 'my-swal-content',
+                                    confirmButton: 'button-modal-bt',
+                                }
+                            });
+                            console.error('Error del servidor:', data.error);
+                        }
+                    })
+                    .catch(error => {
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'Hubo un problema al procesar su reserva. Por favor, intente nuevamente.',
+                            icon: 'error',
+                            confirmButtonText: 'Aceptar',
+                            customClass: {
+                                popup: 'content-modal-bt',
+                                title: 'titulo-modal',
+                                content: 'my-swal-content',
+                                confirmButton: 'button-modal-bt',
+                            }
+                        });
+                        console.error('Error de solicitud:', error);
+                    });
+            });
+
+        </script>
+
+
+
+
+
+
+
+    </body>
+
+
+    <footer>
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="social_icon">
+            <li><a href="https://wa.me/message/IREGEUO4XHVNN1?src=qr">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </a></li>
+            <li><a href="https://www.facebook.com/hostalmirador21">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+            <li><a href="https://www.instagram.com/hostalmirador__/?igshid=NjZxdjRidGF0enMy">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+        </ul>
+        <ul class="menu">
+            <li><a href="cc.php">Habitaciones</a></li>
+            <li><a></a></li>
+            <li><a href="galeria.php">Galería</a></li>
+            <li><a></a></li>
+            <li><a href="restau.php">Restaurante</a></li>
+            <li><a></a></li>
+            <li><a href="#">Reservas</a></li>
+            <li><a></a></li>
+            <li><a href="#">Contactanos</a></li>
+        </ul>
+        <p>© 2024 Hostal Mirador Pisco | Todos los derechos reservados.</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+        footer {
+            position: relative;
+            width: auto;
+            background: rgb(167, 149, 122);
+            min-height: 200px;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 18px;
+        }
+
+        footer .social_icon,
+        footer .menu {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        footer .social_icon li,
+        footer .menu li {
+            list-style: none;
+        }
+
+        footer .social_icon li a {
+            font-size: 2em;
+            color: #fff;
+            margin: 0 10px;
+            display: inline-block;
+            transition: 0.5s;
+        }
+
+        footer .social_icon li a :hover {
+            transform: translateY(-10px);
+        }
+
+        footer .menu li a {
+            font-size: 1.2em;
+            color: #fff;
+            margin: 0 10px;
+            display: inline-block;
+            text-decoration: none;
+            opacity: 0.75;
+        }
+
+        footer .menu li a:hover {
+            opacity: 0.5;
+        }
+
+        footer p {
+            color: #fff;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        footer .wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url(imagenes/wave.png);
+            background-size: 1000px 100px;
+        }
+
+        footer .wave#wave1 {
+            z-index: 999;
+            opacity: 1;
+            bottom: 0;
+            animation: animateWave 4s linear infinite;
+        }
+
+        footer .wave#wave2 {
+            z-index: 999;
+            opacity: 0.5;
+            bottom: 15px;
+            animation: animateWave_02 4s linear infinite;
+        }
+
+        footer .wave#wave3 {
+            z-index: 999;
+            opacity: 0.2;
+            bottom: 0;
+            animation: animateWave 3s linear infinite;
+        }
+
+        footer .wave#wave4 {
+            z-index: 999;
+            opacity: 0.7;
+            bottom: 20px;
+            animation: animateWave_02 5s linear infinite;
+        }
+
+        @keyframes animateWave {
+            0% {
+                background-position-x: 1000px;
+            }
+
+            100% {
+                background-position-x: 0px;
+            }
+        }
+
+        @keyframes animateWave_02 {
+            0% {
+                background-position-x: 0px;
+            }
+
+            100% {
+                background-position-x: 1000px;
+            }
+        }
+    </style>
